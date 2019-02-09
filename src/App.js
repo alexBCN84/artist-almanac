@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-import Boundary from './containers/Boundary';
+import Boundary from './Boundary';
 import './App.css';
-import axios from 'axios';
+import Artist from './ArtistInfo/containers/Artist';
 class App extends Component {
-
-  componentDidMount() {
-
-  }
   render() {
     return (
       <div className="App">
         <Boundary>
           <p>The Artist Almanac</p>
+          <Artist />
         </Boundary>
       </div>
     );
