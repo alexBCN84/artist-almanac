@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import Aux from '../hoc/Aux';
 import axios from 'axios';
 import { selectProps } from '../helpers';
-import * as actionTypes from './../store/actions';
+import * as actionTypes from '../store/actions';
 import { connect } from 'react-redux';
-class Artist extends Component {
+class artistSearch extends Component {
 
     fetchArtistData = async (e) => {
         e.preventDefault();
@@ -25,13 +25,12 @@ class Artist extends Component {
         });
 
         const artistData = { profile: { ...profile }, events: [...events] }
-        console.log(this.props.onStoreArtist(artistData))
+        this.props.onStoreArtist(artistData);
         this.refs.artist.value = '';
 
     }
 
     render() {
-        console.log(this.props.storedArtists);
         return (
             <Aux>
                 <form onSubmit={this.fetchArtistData}>
@@ -56,4 +55,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Artist)
+export default connect(mapStateToProps, mapDispatchToProps)(artistSearch)

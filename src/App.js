@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Boundary from './Boundary';
 import './App.css';
-import Artist from './containers/Artist';
+import ArtistSearch from './containers/ArtistSearch';
+import ArtistGallery from './components/ArtistGallery';
 
 class App extends Component {
   render() {
@@ -9,7 +10,8 @@ class App extends Component {
       <div className="App">
         <Boundary>
           <p>The Artist Almanac</p>
-          <Artist />
+          <ArtistSearch />
+          <ArtistGallery />
         </Boundary>
       </div>
     );
