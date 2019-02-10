@@ -4,6 +4,7 @@ import axios from 'axios';
 import { selectProps } from '../helpers';
 import * as actionTypes from '../store/actions';
 import { connect } from 'react-redux';
+import Container from '../components/UI/Container';
 class artistSearch extends Component {
 
     fetchArtistData = async (e) => {
@@ -32,14 +33,14 @@ class artistSearch extends Component {
 
     render() {
         return (
-            <Aux>
+            <Container style={{ backgroundColor: 'yellow' }}>
                 <form onSubmit={this.fetchArtistData}>
                     <div className="form-group">
                         <input ref="artist" type="text" name="artist" placeholder="enter artist name" />
                         <button id="get-artist" type="submit">&ensp;Add artist</button>
                     </div>
                 </form>
-            </Aux>
+            </Container>
         )
     }
 }
