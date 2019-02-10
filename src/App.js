@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Boundary from './Boundary';
 import './App.css';
-import ArtistTile from './components/ArtistTile';
+import Artist from './containers/Artist';
 
 class App extends Component {
   render() {
@@ -9,7 +9,7 @@ class App extends Component {
       <div className="App">
         <Boundary>
           <p>The Artist Almanac</p>
-          <ArtistTile />
+          <Artist />
         </Boundary>
       </div>
     );

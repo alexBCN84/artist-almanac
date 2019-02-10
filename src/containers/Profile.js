@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import ProfileCard from '../components/ProfileCard';
 import { selectProps } from '../helpers';
+// import * as actionTypes from '../store/actions';
+// import { connect } from 'react-redux';
 class Profile extends Component {
     state = {
-        name: this.props.artist,
+        name: null,
         id: null,
         image_url: null,
         facebook_page_url: null,
@@ -16,7 +18,7 @@ class Profile extends Component {
     }
 
     getProfileData = async () => {
-        const { name } = this.state;
+        const name = this.props.artist;
         const apiCall = await axios.get(`https://rest.bandsintown.com/artists/${name}?app_id=fortuna`);
         const apiCallData = apiCall.data;
         const artistData = selectProps(apiCallData, ['name', 'id', 'image_url', 'facebook_page_url', 'upcoming_event_count']);
@@ -35,5 +37,11 @@ class Profile extends Component {
 };
 
 // propTypes
+
+// const mapStateToProps = state => {
+//     return { artist: state.name.value };
+// };
+
+// export default connect(mapStateToProps)(Profile);
 
 export default Profile

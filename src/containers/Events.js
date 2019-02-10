@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import EventCard from '../components/EventCard';
 import { selectProps } from '../helpers';
+// import { connect } from 'react-redux';
+
 class Events extends Component {
     state = {
         events: []
@@ -45,5 +47,11 @@ class Events extends Component {
 };
 
 // propTypes
+
+// const mapStateToProps = state => {
+//     return { artist: state.name.value };
+// };
+
+// export default connect(mapStateToProps)(Events);
 
 export default Events
