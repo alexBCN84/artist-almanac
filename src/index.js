@@ -6,9 +6,20 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import artistReducer from './store/reducers/artistsReducer';
+import WebFont from 'webfontloader';
+import { loadState, saveState } from './localStorage';
+import throttle from 'lodash/throttle';
+WebFont.load({
+    google: {
+        families: ['Major Mono Display', 'cursive', 'PT Sans', 'sans-serif', 'Comfortaa', 'Rajdhani']
+    }
+});
 
-
-const store = createStore(artistReducer);
+const persistedState = loadState();
+const store = createStore(artistReducer, persistedState);
+store.subscribe(throttle(() => {
+    saveState({ artists: store.getState().artists });
+}, 1000));
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 
