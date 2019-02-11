@@ -3,11 +3,11 @@ import React from 'react';
 const footer = props => {
     const style = {
         backgroundColor: '#1B1C1C',
-        width: '100%',
         minHeight: 100,
         padding: '10px 20%',
         borderTop: '1px solid #DDDDDD',
         color: '#fff',
+        fontFamily: "'Major Mono Display', monospace",
         ...props.style
     }
     return (
