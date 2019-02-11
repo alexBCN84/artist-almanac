@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Aux from '../hoc/Aux';
 import axios from 'axios';
 import { selectProps } from '../helpers';
 import * as actionTypes from '../store/actions';
@@ -26,9 +25,20 @@ class artistSearch extends Component {
         });
 
         const artistData = { profile: { ...profile }, events: [...events] }
-        this.props.onStoreArtist(artistData);
+        this.persistData(artistData);
         this.refs.artist.value = '';
 
+    }
+
+    persistData = newArtist => {
+        if (this.props.storedArtists.length > 0) {
+            const newArtistProfileId = newArtist.profile.id;
+            const storedArtistsProfileIds = this.props.storedArtists.map(artist => artist.profile_id);
+            const isArtistInStore = storedArtistsProfileIds.includes(newArtistProfileId);
+            return isArtistInStore ? null : this.props.onStoreArtist(newArtist);
+        }
+
+        this.props.onStoreArtist(newArtist);
     }
 
     render() {
