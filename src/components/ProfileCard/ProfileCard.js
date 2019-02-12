@@ -1,5 +1,5 @@
 import React from 'react';
-import { FacebookIcon } from './UI/Icon/Icons';
+import { FacebookIcon } from '../UI/Icon/Icons';
 
 
 const profileCard = props => {

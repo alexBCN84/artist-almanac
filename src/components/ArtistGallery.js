@@ -4,7 +4,7 @@ import * as actionTypes from '../store/actions';
 import { selectProps } from '../helpers';
 import ArtistCard from './UI/ArtistCard';
 import EventCard from './EventCard';
-import ProfileCard from './ProfileCard';
+import ProfileCard from './ProfileCard/ProfileCard';
 import EventsGallery from './EventsGallery';
 import { Grid, Row, Col } from './UI/Grid';
 
