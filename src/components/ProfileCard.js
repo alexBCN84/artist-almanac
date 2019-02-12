@@ -3,7 +3,7 @@ import { FacebookIcon } from './UI/Icon/Icons';
 
 
 const profileCard = props => {
-    console.log(props);
+
     const headerStyles = {
         position: "relative",
         width: "100%",
@@ -27,22 +27,31 @@ const profileCard = props => {
         fontFamily: "'Rajdhani', sans-serif",
         fontSize: 20,
         fontWeight: 400,
+        marginTop: 5,
         letterSpacing: 3.5
     }
+
+    const upcomingEventsStyles = {
+        color: "#A8A8A8",
+        fontSize: ".8em",
+        marginTop: -20
+    };
     return (
         <article>
             <header style={headerStyles}>
                 {props.profile_facebook !== "" && <FacebookIcon style={facebookIconStyles} href={props.profile_facebook} />}
             </header>
             <h1 style={nameStyles}>{props.profile_name}</h1>
+            <p style={upcomingEventsStyles}>{props.profile_upcoming_event_count > 1 ?
+                `${props.profile_upcoming_event_count} upcoming events` :
+                props.profile_upcoming_event_count === 1 ?
+                    "1 upcoming event" : "No upcoming events"}
+            </p>
 
         </article>
 
     )
-    // return Object.keys(props).map((prop, i) =>
 
-    // <p key={i}><strong>{prop}:</strong> {props[prop]}</p>
-    // );
 };
 
 export default profileCard;
