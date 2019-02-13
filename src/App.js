@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Boundary from './Boundary';
 import './App.css';
-import ArtistSearch from './containers/ArtistSearch';
-import ArtistGallery from './components/ArtistGallery';
+import ArtistSearch from './containers/ArtistSearch/ArtistSearch';
+import ArtistGallery from './components/ArtistGallery/ArtistGallery';
 import { StyleRoot } from 'radium';
-import Layout from './components/UI/Layout';
-import Header from './components/UI/Header';
-import Content from './components/UI/Content';
+import Layout from './components/UI/Layout/Layout';
+import Header from './components/UI/Header/Header';
+import Content from './components/UI/Content/Content';
+import Herobanner from './components/UI/Herobanner';
+import { connect } from 'react-redux';
 class App extends Component {
   render() {
     return (
@@ -18,9 +20,11 @@ class App extends Component {
                 <ArtistSearch />
               </Boundary>
             </Header>
-            <Content>
-              <ArtistGallery />
-            </Content>
+            <Herobanner />
+            {this.props.storedArtists.length > 0 &&
+              <Content>
+                <ArtistGallery />
+              </Content>}
           </Layout>
         </div>
       </StyleRoot>
@@ -28,4 +32,11 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    storedArtists: state.artists
+  };
+};
+
+
+export default connect(mapStateToProps)(App)
