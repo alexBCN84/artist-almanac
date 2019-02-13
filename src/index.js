@@ -11,7 +11,7 @@ import { loadState, saveState } from './localStorage';
 import throttle from 'lodash/throttle';
 WebFont.load({
     google: {
-        families: ['Major Mono Display', 'cursive', 'PT Sans', 'sans-serif', 'Comfortaa', 'Rajdhani']
+        families: ['Major Mono Display', 'cursive', 'PT Sans', 'sans-serif', 'Comfortaa', 'Rajdhani', 'Merriweather', 'Raleway', 'Abel']
     }
 });
 
