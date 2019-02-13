@@ -1,6 +1,6 @@
 import React from 'react';
 import { FacebookIcon } from '../UI/Icon/Icons';
-
+import { PropTypes } from 'prop-types';
 
 const profileCard = props => {
 
@@ -37,7 +37,7 @@ const profileCard = props => {
         marginTop: -20
     };
     return (
-        <article>
+        <section>
             <header style={headerStyles}>
                 {props.profile_facebook !== "" && <FacebookIcon style={facebookIconStyles} href={props.profile_facebook} />}
             </header>
@@ -48,10 +48,18 @@ const profileCard = props => {
                     "1 upcoming event" : "No upcoming events"}
             </p>
 
-        </article>
+        </section>
 
     )
 
 };
+
+profileCard.propTypes = {
+    profile_image: PropTypes.string,
+    profile_name: PropTypes.string,
+    profile_upcoming_event_count: PropTypes.number,
+    profile_facebook: PropTypes.string
+}
+
 
 export default profileCard;
