@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/artist-almanac/static/css/main.cb036968.chunk.css"
   },
   {
-    "revision": "36c997a4cc869f9184528615b7c0c72e",
+    "revision": "ee8718886857423afe0a37d889d8f080",
     "url": "/artist-almanac/index.html"
   }
 ];
