@@ -8,10 +8,10 @@ import ProfileCard from '../../components/ProfileCard/ProfileCard';
 import EventsGallery from '../../components/EventsGallery/EventsGallery';
 import { Grid, Row, Col } from '../../components/UI/Grid/Grid';
 import PropTypes from 'prop-types';
-import Modal from '../../components/UI/Modal/Modal';
-import Backdrop from '../../components/UI/Backdrop/Backdrop';
-import Aux from '../../hoc/Aux';
+
+
 export class ArtistGallery extends Component {
+
 	state = {
 		modalIsOpen: false
 	}
@@ -22,6 +22,21 @@ export class ArtistGallery extends Component {
 
 	closeModal = () => {
 		this.setState({ modalIsOpen: false });
+	}
+
+	eventsGalleryInModalWindow = events => {
+		return (
+
+			<EventsGallery>
+				<Grid gutters={10}>
+					<Row>
+						{events.map(event => <Col width={2}><EventCard {...event} /></Col>)}
+					</Row>
+				</Grid>
+
+			</EventsGallery>
+
+		)
 	}
 
 	render() {
@@ -74,34 +89,36 @@ export class ArtistGallery extends Component {
 						There are no upcoming events for {artist.profile_name}
 					</p>
 				</Col>);
+			if (events.length > 2) {
+
+			}
 			return events.slice(0, 2).map(event => <Col mobile={5} key={event.id}><EventCard {...event} /></Col>)
 		}
-		return (
-			<Aux>
-				<Modal show={this.state.modalIsOpen} closed={this.closeModal} />
-				<Backdrop show={this.state.modalIsOpen} />
-				<Grid>
-					<Row>
 
-						{this.props.storedArtists.map(artist =>
-							<Col mobile={12} phablet={6} tablet={5} desktop={3} key={artist.id}>
-								<ArtistCard >
-									<ProfileCard {...selectProps(artist, ['profile_facebook', 'profile_id', 'profile_image', 'profile_name', 'profile_upcoming_event_count'])} />
-									<EventsGallery>
-										<Grid gutters={10}>
-											<Row>
-												{displayEvents(artist)}
-											</Row>
-										</Grid>
-										{(artist.events.length >= 2) && <button onClick={this.showModal} style={seeEventsButtonStyles}>See all the events</button>}
-									</EventsGallery>
-								</ArtistCard>
-								<button style={removeButtonStyles} onClick={() => this.props.onRemoveArtist(artist.id)}>{`Remove ${artist.profile_name}`}</button>
-							</Col>)
-						}
-					</Row>
-				</Grid>
-			</Aux>
+		return (
+			<Grid>
+				<Row>
+					{this.props.storedArtists.map(artist => <Col mobile={12} phablet={6} tablet={5} desktop={3} key={artist.id}>
+
+						<ArtistCard >
+
+							<ProfileCard {...selectProps(artist, ['profile_facebook', 'profile_id', 'profile_image', 'profile_name', 'profile_upcoming_event_count'])} />
+							<EventsGallery>
+								<Grid gutters={10}>
+									<Row>
+										{displayEvents(artist)}
+
+									</Row>
+								</Grid>
+								{(artist.events.length >= 2) && <button onClick={() => this.props.onAddEventsToModal(artist.events)} style={seeEventsButtonStyles}>See all the events</button>}
+							</EventsGallery>
+						</ArtistCard>
+						<button style={removeButtonStyles} onClick={() => this.props.onRemoveArtist(artist.id)}>{`Remove ${artist.profile_name}`}</button>
+					</Col>)
+
+					}
+				</Row>
+			</Grid>
 		)
 	}
 }
@@ -115,13 +132,15 @@ ArtistGallery.propTypes = {
 
 const mapStateToProps = state => {
 	return {
-		storedArtists: state.artists
+		storedArtists: state.art.artists
 	};
 };
 
 const mapDispatchToProps = dispatch => {
 	return {
-		onRemoveArtist: (id) => dispatch({ type: actionTypes.REMOVE_ARTIST, artistId: id })
+		onRemoveArtist: (id) => dispatch({ type: actionTypes.REMOVE_ARTIST, artistId: id }),
+		onAddEventsToModal: (events) => dispatch({ type: actionTypes.ADD_ARTIST_TO_MODAL, add_artist: events }),
+		onRemoveArtistFromModal: () => dispatch({ type: actionTypes.REMOVE_ARTIST_FROM_MODAL })
 	}
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ArtistGallery);

@@ -9,7 +9,7 @@ const eventCard = props => {
         boxShadow: "0 3px 15px 0 rgba(0,0,0,.09)",
         overflow: "hidden",
         width: "100%",
-        height: 120,
+        height: "100%",
 
     };
 

@@ -78,7 +78,7 @@ export class artistSearch extends Component {
 }
 const mapStateToProps = state => {
     return {
-        storedArtists: state.artists
+        storedArtists: state.art.artists
     };
 };
 

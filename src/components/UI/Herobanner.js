@@ -1,11 +1,10 @@
 import React from 'react';
-import breakpoint from '../UI/breakpoints';
+
 const herobanner = () => {
     const styles = {
         width: "100%",
-        height: "40vh",
+        height: "50vh",
         paddingTop: "30vh",
-        backgroundColor: "#57B3B1",
         backgroundImage: "url('https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')",
         backgroundSize: "cover",
         backgroundAttachment: "fixed"
@@ -13,13 +12,12 @@ const herobanner = () => {
 
     const textStyles = {
         color: "#fff",
+        textShadow: "0 1px 2px 0 rgba(34,36,38,.15)",
         fontFamily: "'Abel', sans-serif",
         fontWeight: 800,
         letterSpacing: 2,
         textTransform: "uppercase",
-        [breakpoint.mobile]: {
-            fontSize: "5vw"
-        }
+        fontSize: "1.5em"
     }
     return (
         <section style={styles}>

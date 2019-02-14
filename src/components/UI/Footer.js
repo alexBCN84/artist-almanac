@@ -4,10 +4,10 @@ import { Grid, Row, Col } from '../UI/Grid/Grid';
 const footer = props => {
     const style = {
         backgroundColor: '#2D2D2D',
-        heigt: "20vh",
+        heigth: "auto",
         minHeight: 50,
         padding: '20px 20%',
-        borderTop: '1px solid #DDDDDD',
+        borderTop: "1px solid rgba(34,36,38,.15)",
         color: '#fff',
         fontFamily: "'Merriweather', serif",
         ...props.style
@@ -16,7 +16,6 @@ const footer = props => {
     const brandsintownButton = {
         textDecoration: "none",
         color: "#2D2D2D",
-        marginLeft: 40,
         letterSpacing: 1.5,
         padding: 10,
         backgroundColor: "#fff",

@@ -9,6 +9,9 @@ import Header from './components/UI/Header/Header';
 import Content from './components/UI/Content/Content';
 import Herobanner from './components/UI/Herobanner';
 import { connect } from 'react-redux';
+import Modal from './components/UI/Modal/Modal';
+import Backdrop from './components/UI/Backdrop/Backdrop';
+import Aux from './hoc/Aux';
 
 class App extends Component {
   render() {
@@ -16,6 +19,7 @@ class App extends Component {
       <StyleRoot>
         <div className="App">
           <Layout>
+            {this.props.isModalOpen && (<Aux><Modal events={this.props.eventsInModal} /> <Backdrop show={this.props.isModalOpen} /></Aux>)}
             <Header>
               <Boundary>
                 <ArtistSearch />
@@ -35,9 +39,11 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    storedArtists: state.artists
+    storedArtists: state.art.artists,
+    eventsInModal: state.mod.events_in_modal,
+    isModalOpen: state.mod.is_modal_open
   };
 };
 
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps)(App);

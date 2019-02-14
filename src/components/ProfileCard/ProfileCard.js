@@ -8,7 +8,6 @@ const profileCard = props => {
         position: "relative",
         width: "100%",
         height: 200,
-        backgroundColor: "#57B3B1",
         backgroundImage: props.profile_image !== "" && `url(${props.profile_image})`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
