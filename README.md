@@ -88,6 +88,6 @@ To deploy this app with github pages I followed these steps:
    ```
 `
 
-To see a deployed version of the application please visit  
+To see a deployed DEMO version of the application please visit  
 [artist almanac](https://alexbcn84.github.io/artist-almanac/).
 
