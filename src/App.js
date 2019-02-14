@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Boundary from './Boundary';
 import './App.css';
 import ArtistSearch from './containers/ArtistSearch/ArtistSearch';
-import ArtistGallery from './containers/ArtistGallery/ArtistGallery';
+import ArtistGallery from './components/ArtistGallery/ArtistGallery';
 import { StyleRoot } from 'radium';
 import Layout from './components/UI/Layout/Layout';
 import Header from './components/UI/Header/Header';
@@ -28,7 +28,9 @@ class App extends Component {
             <Herobanner />
             {this.props.storedArtists.length > 0 &&
               <Content>
-                <ArtistGallery />
+                <Boundary>
+                  <ArtistGallery />
+                </Boundary>
               </Content>}
           </Layout>
         </div>

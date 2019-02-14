@@ -4,8 +4,8 @@ import {
     shallow
 } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import ArtistGallery from './ArtistGallery';
-import ArtistCard from '../../components/ArtistCard/ArtistCard';
+import artistGallery from './ArtistGallery';
+import ArtistCard from '../ArtistCard/ArtistCard';
 
 configure({
     adapter: new Adapter()
@@ -14,7 +14,7 @@ configure({
 describe('<ArtistGallery/>', () => {
     let wrapper;
     beforeEach(() => {
-        wrapper = shallow(<ArtistGallery onRemoveArtist={() => { }} />)
+        wrapper = shallow(<artistGallery onRemoveArtist={() => { }} />)
     });
 
     it('should not render <ArtistCard/> when not receiving stored artists', () => {
