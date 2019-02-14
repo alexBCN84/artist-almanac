@@ -41,7 +41,6 @@ export class ArtistGallery extends Component {
 
 	render() {
 		const buttonStyles = {
-			width: "100%",
 			padding: 7,
 			lineHeight: "1.4em",
 			fontSize: ".8em",

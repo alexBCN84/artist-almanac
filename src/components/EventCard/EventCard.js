@@ -14,7 +14,6 @@ const eventCard = props => {
     };
 
     const cityStyles = {
-        textAlign: "left",
         marginLeft: 3,
         fontSize: 9,
         textOverflow: "ellipsis",

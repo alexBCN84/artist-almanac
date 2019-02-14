@@ -12,7 +12,6 @@ const modal = props => {
         left: 0,
         padding: 7,
         lineHeight: "1.4em",
-        fontSize: ".8em",
         color: "#fff",
         fontWeight: 800,
         textAlign: "center",

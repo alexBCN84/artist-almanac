@@ -6,7 +6,7 @@ const grid = (props) => {
 
     const gridStyles = {
         width: "100%",
-        maxWidth: props.fullWidth && "100%" || props.maxWidth && props.maxWidth || "1200px",
+        maxWidth: ((props.fullWidth && "100%") || (props.maxWidth && props.maxWidth)) || "1200px",
         margin: "0 auto"
     };
 
