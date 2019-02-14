@@ -1,68 +1,92 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# The Artist Almanac
 
-## Available Scripts
+A webapp to find artists, access to their facebook profile and their upcoming events.
 
-In the project directory, you can run:
+## Requirements
+- Node.js 8.8+
+- NPM 5+ / yarn
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Setup the project locally
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
+1. Install the node dependencies:
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```
+   npm install
+   ```
+   or
+   ```
+   yarn
+   ```
+2. Run the project locally
+    ```
+   npm start
+   ```
+   or
+   ```
+   yarn start
+   ```
+3. Run unit test
+   ```
+   npm run test
+   ```
+   or
+   ```
+   yarn test
+   ```
+`
 
-### `npm run build`
+   ## Project structure
+   The project is built using [create-react-app](https://github.com/facebook/create-react-app) so the folder structure follows the common pattern of a standard CRA application.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    `▸ build/` in here is where the CRA tools is storing the production ready css and js files
+    `▸ src/`  where the application source code reside.
+    `▸ src/components` this directory contains all the stateless functional components. Mainly classified on components rendering application specific data, and UI components, which provide the overall layout of the app, including a responsive custom grid component.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+    `▸ src/containers` contains the class component in charge of calling to the API.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    `▸ src/hoc` is a specific directory for High Order Components.
 
-### `npm run eject`
+    `▸ public/` where the `index.html` resides used by the development server.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    `▸ src/store` contains redux actions and reducers.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    `▸ src/helper` helper functions used across the application.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Build and deploy process
 
-## Learn More
+To deploy this app with github pages I followed these steps: 
+1. Install gh-pages package in your root directory:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```
+   npm install --save gh-pages
+   ```
+   or
+   ```
+   yarn add gh-pages --save
+   ```
+2. Setup your package.json.
+    ```
+   change your hompage: "homepage": https://[your-user-name].github.io/[your-repo-name]/
+   ```
+   and add the following scripts:
+   ```
+   "predeploy": "yarn run build",
+   ```
+   "deploy": "gh-pages -d build",
+   ```
+3. Deploy the application
+   ```
+   npm run deploy
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```
+   or
+   ```
+   yarn deploy
+   ```
+`
 
-### Code Splitting
+To see a deployed version of the application please visit  `https://alexbcn84.github.io/artist-almanac/`.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
