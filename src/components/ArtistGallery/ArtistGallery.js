@@ -20,7 +20,8 @@ export const artistGallery = props => {
         textAlign: "center",
         borderRadius: 4,
         border: "1px solid #000",
-        width: "80%"
+        width: "80%",
+        outline: 0
     }
 
     const noEventsBoxStyle = {

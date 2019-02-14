@@ -17,7 +17,8 @@ const modal = props => {
         textAlign: "center",
         boxShadow: "0 3px 15px 0 rgba(0,0,0,.09)",
         backgroundColor: "#57B3B1",
-        fontSize: 10
+        fontSize: 10,
+        outline: 0
     }
     return (
         <div className={'Modal ModalOpen'}>
