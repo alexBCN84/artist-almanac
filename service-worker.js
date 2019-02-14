@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/artist-almanac/precache-manifest.dda98390aaab9d7133330e6cd17b6155.js"
+  "/artist-almanac/precache-manifest.2e33c03e86eb430362a5a0caf9e69ce3.js"
 );
 
 workbox.clientsClaim();
