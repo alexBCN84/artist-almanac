@@ -63,10 +63,14 @@ export class artistSearch extends Component {
         const buttonStyles = {
             position: "absolute",
             top: 40,
+<<<<<<< HEAD
             right: 20,
             border: "none",
             backgroundColor: "transparent",
             outline: 0
+=======
+
+>>>>>>> 90113c4dbaf010491b061e3de4f555146df56054
         }
 
         return (
