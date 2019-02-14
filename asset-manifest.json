@@ -1,13 +1,13 @@
 {
-  "main.css": "/artist-almanac/static/css/main.cb036968.chunk.css",
-  "main.js": "/artist-almanac/static/js/main.da6b5a59.chunk.js",
-  "main.js.map": "/artist-almanac/static/js/main.da6b5a59.chunk.js.map",
+  "main.css": "/artist-almanac/static/css/main.d600e3d0.chunk.css",
+  "main.js": "/artist-almanac/static/js/main.eb887957.chunk.js",
+  "main.js.map": "/artist-almanac/static/js/main.eb887957.chunk.js.map",
   "static/js/1.c7a445f6.chunk.js": "/artist-almanac/static/js/1.c7a445f6.chunk.js",
   "static/js/1.c7a445f6.chunk.js.map": "/artist-almanac/static/js/1.c7a445f6.chunk.js.map",
   "runtime~main.js": "/artist-almanac/static/js/runtime~main.c64029e8.js",
   "runtime~main.js.map": "/artist-almanac/static/js/runtime~main.c64029e8.js.map",
-  "static/css/main.cb036968.chunk.css.map": "/artist-almanac/static/css/main.cb036968.chunk.css.map",
+  "static/css/main.d600e3d0.chunk.css.map": "/artist-almanac/static/css/main.d600e3d0.chunk.css.map",
   "index.html": "/artist-almanac/index.html",
-  "precache-manifest.9db7e3b4765815b93bd44426cdca8d9b.js": "/artist-almanac/precache-manifest.9db7e3b4765815b93bd44426cdca8d9b.js",
+  "precache-manifest.dda98390aaab9d7133330e6cd17b6155.js": "/artist-almanac/precache-manifest.dda98390aaab9d7133330e6cd17b6155.js",
   "service-worker.js": "/artist-almanac/service-worker.js"
 }

@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/artist-almanac/static/js/runtime~main.c64029e8.js"
   },
   {
-    "revision": "da6b5a59a6f10fc85d34",
-    "url": "/artist-almanac/static/js/main.da6b5a59.chunk.js"
+    "revision": "eb887957bd7f41cdcaa8",
+    "url": "/artist-almanac/static/js/main.eb887957.chunk.js"
   },
   {
     "revision": "c7a445f6a85768c534bd",
     "url": "/artist-almanac/static/js/1.c7a445f6.chunk.js"
   },
   {
-    "revision": "da6b5a59a6f10fc85d34",
-    "url": "/artist-almanac/static/css/main.cb036968.chunk.css"
+    "revision": "eb887957bd7f41cdcaa8",
+    "url": "/artist-almanac/static/css/main.d600e3d0.chunk.css"
   },
   {
-    "revision": "ee8718886857423afe0a37d889d8f080",
+    "revision": "29b243d6bfeb8832743bd6a254240ce1",
     "url": "/artist-almanac/index.html"
   }
 ];
