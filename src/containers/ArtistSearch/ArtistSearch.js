@@ -63,14 +63,17 @@ export class artistSearch extends Component {
         const buttonStyles = {
             position: "absolute",
             top: 40,
-            right: 20
+            right: 20,
+            border: "none",
+            backgroundColor: "rgb(0, 0, 0, 0)",
+            outline: 0
         }
 
         return (
             <form onSubmit={this.fetchArtistData}>
                 <div>
                     <input style={inputStyles} ref="artist" type="text" name="artist" placeholder="enter artist name" />
-                    <span style={buttonStyles} id="get-artist" type="submit"><SearchIcon /></span>
+                    <button style={buttonStyles} id="get-artist" type="submit"><SearchIcon /></button>
                 </div>
             </form>
         )
